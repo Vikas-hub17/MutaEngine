@@ -1,23 +1,15 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
-module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1A73E8', // Blue from PDF
-        secondary: '#FF7C1F', // Accent orange color
-        dark: '#1F2937', // Dark gray for text
-        lightGray: '#F3F4F6', // Light gray background
+        primary: '#0057D9', // Color from the PDF
+        secondary: '#FF6D00', // Accent color from the PDF
+        darkGray: '#1F2937', // Dark gray for text
+        lightGray: '#F3F4F6', // Light gray for background sections
+        buttonText: '#FFFFFF', // Button text color
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Change to match the design if needed
+        sans: ['Inter', 'sans-serif'], // Ensure the font matches PDF's style
       },
     },
   },
