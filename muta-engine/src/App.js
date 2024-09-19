@@ -1,11 +1,13 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Stats from './components/Stats';
-import Footer from './components/Footer';
+import Header from './LandingPage/Header';
+import Hero from './LandingPage/Hero';
+import Features from './LandingPage/Features';
+import HowItWorks from './LandingPage/HowItWorks';
+import Stats from './LandingPage/Stats';
+import Footer from './LandingPage/Footer';
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutUs from '../src/pages/AboutUs.jsx';
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -26,7 +28,13 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
+    
     <div className="App">
+      <Router>
+      <Routes>
+        <Route path="/about-us" element={<AboutUs />} /> {/* AboutUs route */}
+      </Routes>
+    </Router>
       <GlobalStyle />
       <Header />
       <Hero />
