@@ -81,7 +81,7 @@ const Header = () => {
         <Logo><img src={MutaEngine}></img></Logo>
         <NavLinks>
           <li><a href="#overview">Overview</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="../pages/AboutUs.jsx">About</a></li>
           <li><a href="#features">Contact Us</a></li>
           <li><a href="#contact">Solutions</a></li>
         </NavLinks>

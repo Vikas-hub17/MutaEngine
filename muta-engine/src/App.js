@@ -30,11 +30,6 @@ function App() {
   return (
     
     <div className="App">
-      <Router>
-      <Routes>
-        <Route path="/about-us" element={<AboutUs />} /> {/* AboutUs route */}
-      </Routes>
-    </Router>
       <GlobalStyle />
       <Header />
       <Hero />
