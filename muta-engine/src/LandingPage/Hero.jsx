@@ -1,130 +1,101 @@
 import React from 'react';
-import styled from 'styled-components'; 
-import heroGraphic from '../assests/HeroGraphic.png'; 
+import styled from 'styled-components';
+import HeroImg from '../assests/Hero.png';
 
+// Styled Components
 const HeroSection = styled.section`
-  background: #00040F;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 20px;
+  background-color: #00040F;
   color: white;
-  overflow: hidden;
-  text-align: left;
-  
-  @media (min-width: 768px) {
-    padding: 0 50px;
-  }
+  padding: 100px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const HeroContent = styled.div`
+const TextContent = styled.div`
   max-width: 600px;
-  z-index: 2;
+  margin-left: 20px;
+  margin-top: -80px;
 `;
 
-const Tagline = styled.p`
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
-  border-radius: 50px;
+const Tagline = styled.div`
+  background-color: transparent;
+  color: white;
+  border: 1px solid #00D4FF;
+  padding: 5px 15px;
+  border-radius: 5px;
   display: inline-block;
   font-size: 14px;
-  color: #D1D5DB;
   margin-bottom: 20px;
 `;
 
-const Headline = styled.h1`
-  font-size: 2.5rem;
+const Heading = styled.h1`
+  font-size: 48px;
   line-height: 1.2;
   margin-bottom: 20px;
-  color: #FFFFFF;
-  
-  span {
-    color: #00D9FF; /* Teal for 'Dynamic Mutation' */
-  }
 
-  @media (min-width: 768px) {
-    font-size: 3.5rem;
+  span {
+    color: #00D4FF;
   }
 `;
 
 const SubText = styled.p`
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #A0AEC0;
-  margin-bottom: 30px;
-
-  @media (min-width: 768px) {
-    font-size: 1.25rem;
-  }
+  font-size: 18px;
+  margin-bottom: 40px;
 `;
 
-const ButtonContainer = styled.div`
+const ButtonGroup = styled.div`
   display: flex;
   gap: 20px;
 `;
 
-const Button = styled.a`
+const Button = styled.button`
+  border: 2px solid #00D4FF;
   padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 50px;
-  text-align: center;
+  border-radius: 15px;
+  background-color: ${(props) => (props.primary ? '#00D4FF' : 'transparent')};
+  color: ${(props) => (props.primary ? '#00040F' : '#FFFFFF')};
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 
-  &.primary {
-    background-color: #00D9FF;
-    color: #1A202C;
-    
-    &:hover {
-      background-color: #00b9e6;
-    }
-  }
-
-  &.secondary {
-    background-color: #1A202C;
-    border: 2px solid #00D9FF;
-    color: #FFFFFF;
-    
-    &:hover {
-      background-color: #111827;
-    }
+  &:hover {
+    background-color: ${(props) => (props.primary ? '#00b3e6' : '#00D4FF')};
+    color: ${(props) => (props.primary ? '#00040F' : '#00040F')};
   }
 `;
 
-const HeroGraphic = styled.img`
-  position: absolute;
-  right: -50px;
-  bottom: 0;
-  width: 600px;
-  height: auto;
-  z-index: 1;
+const ImageContent = styled.div`
+  width: 100%;
+  margin-top: -80px;
 
-  @media (min-width: 768px) {
-    right: -100px;
-    width: 800px;
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-left: 200px;
   }
 `;
 
 const Hero = () => {
   return (
     <HeroSection>
-      <HeroContent>
+      <TextContent>
         <Tagline>Protecting Code, Preserving Innovation</Tagline>
-        <Headline>
-          Revolutionizing Software Security with <span>Dynamic Mutation</span>
-        </Headline>
+        <Heading>
+          Revolutionizing <br></br> Software Security with <span>Dynamic Mutation</span>
+        </Heading>
         <SubText>
           Introducing the Polymorphic Code Engine - A New Era in Protecting Your Software.
         </SubText>
-        <ButtonContainer>
-          <Button href="#learn-more" className="primary">Learn More</Button>
-          <Button href="#start-now" className="secondary">Start Now</Button>
-        </ButtonContainer>
-      </HeroContent>
-      <HeroGraphic src={heroGraphic} alt="Dynamic shape graphic" />
+        <ButtonGroup>
+          <Button primary>Learn More</Button>
+          <Button>Start Now</Button>
+        </ButtonGroup>
+      </TextContent>
+      
+      <ImageContent>
+        <img src={HeroImg} alt="Dynamic Mutation" />
+      </ImageContent>
     </HeroSection>
   );
 };

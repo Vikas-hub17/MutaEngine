@@ -1,178 +1,207 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaStar, FaShieldAlt, FaRocket } from 'react-icons/fa'; // Use FontAwesome for the icons.
 
-// Styled Components
-const FeaturesSection = styled.section`
+const Section = styled.section`
+  background-color: #00040F;
+  color: white;
+  padding: 50px 20px;
+
+  @media (min-width: 768px) {
+    padding: 80px;
+  }
+`;
+
+const Wrapper = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+const TextBlock = styled.div`
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-color: #00040F;
-  color: white;
-  padding: 50px;
-  font-family: 'Arial', sans-serif;
-`;
-
-const FeaturesLeft = styled.div`
-  text-align: left;
-  margin-bottom: 50px;
+  gap: 20px;
 
   h1 {
-    font-size: 36px;
+    font-size: 2.5rem;
     line-height: 1.2;
+
+    span {
+      color: #00D9FF;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
   p {
-    font-size: 18px;
-    margin: 20px 0;
+    color: #B0B3B8;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  @media (min-width: 768px) {
+    text-align: left;
   }
 `;
 
-const GetStartedButton = styled.button`
-  background-color: #00D4FF;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-
-  &:hover {
-    background-color: #00b3e6;
-  }
-`;
-
-const FeaturesRight = styled.div`
+const FeatureList = styled.div`
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 30px;
 `;
 
 const FeatureItem = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
-`;
 
-const FeatureIcon = styled.div`
-  font-size: 40px;
-`;
-
-const FeatureText = styled.div`
   h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-size: 1.4rem;
   }
 
   p {
-    font-size: 16px;
+    color: #B0B3B8;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+`;
+
+const FeatureIcon = styled.div`
+  background-color: #011027;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: #00D9FF;
+`;
+
+const Button = styled.a`
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #00D9FF;
+  color: #00040F;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #00A7D1;
   }
 `;
 
 const CTASection = styled.div`
+  background-color: #262626;
+  border-radius: 20px;
+  padding: 50px 20px;
   text-align: center;
-  background-color: #282A36;
-  padding: 30px;
-  border-radius: 10px;
-  margin-top: 50px;
-  width: 100%;
-  max-width: 800px;
 
   h2 {
-    font-size: 28px;
+    color: #FFFFFF;
+    font-size: 2rem;
     margin-bottom: 20px;
+
+    span {
+      color: #00D9FF;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 
   p {
-    font-size: 18px;
+    color: #B0B3B8;
+    font-size: 1.1rem;
     margin-bottom: 30px;
   }
-`;
 
-const StartNowButton = styled.button`
-  background-color: #00D4FF;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-
-  &:hover {
-    background-color: #00b3e6;
+  @media (min-width: 768px) {
+    max-width: 800px;
+    margin: 0 auto;
   }
-`;
-
-const Highlight = styled.span`
-  color: #00D4FF;
 `;
 
 const Features = () => {
   return (
-    <FeaturesSection>
-      <FeaturesLeft>
-        <h1>
-          You Innovate, <br /> We <Highlight>Secure.</Highlight>
-        </h1>
-        <p>
-          With MutaEngine, you can focus on creating cutting-edge software while we ensure it stays protected from threats.
-          Our advanced technology keeps your intellectual property safe, allowing you to concentrate on what you do best.
-        </p>
-        <GetStartedButton>Get Started</GetStartedButton>
-      </FeaturesLeft>
+    <Section>
+      <Wrapper>
+        {/* Left text block */}
+        <TextBlock>
+          <h1>
+            You Innovate, <span>We Secure</span>.
+          </h1>
+          <p>
+            With MutaEngine, you can focus on creating cutting-edge software while we ensure it stays protected from threats. Our advanced technology keeps your intellectual property safe, allowing you to concentrate on what you do best.
+          </p>
+          <Button href="#">Get Started</Button>
+        </TextBlock>
 
-      <FeaturesRight>
-        <FeatureItem>
-          <FeatureIcon>
-            {/* Star Icon - You can import an SVG or use any icon library */}
-            <span role="img" aria-label="star">⭐</span>
-          </FeatureIcon>
-          <FeatureText>
-            <h3>Polymorphic Code</h3>
-            <p>
-              MutaEngine constantly mutates your software’s code in real-time, making it nearly impossible for hackers to decompile or reverse-engineer.
-            </p>
-          </FeatureText>
-        </FeatureItem>
+        {/* Right feature list */}
+        <FeatureList>
+          <FeatureItem>
+            <FeatureIcon>
+              <FaStar />
+            </FeatureIcon>
+            <div>
+              <h3>Polymorphic Code</h3>
+              <p>
+                MutaEngine constantly mutates your software’s code in real-time, making it nearly impossible for hackers to decompile or reverse-engineer.
+              </p>
+            </div>
+          </FeatureItem>
 
-        <FeatureItem>
-          <FeatureIcon>
-            {/* Shield Icon */}
-            <span role="img" aria-label="shield">🛡️</span>
-          </FeatureIcon>
-          <FeatureText>
-            <h3>360° Security</h3>
-            <p>
-              Our multi-layered defense mechanisms ensure that every part of your software is protected, from code to data to user transactions.
-            </p>
-          </FeatureText>
-        </FeatureItem>
+          <FeatureItem>
+            <FeatureIcon>
+              <FaShieldAlt />
+            </FeatureIcon>
+            <div>
+              <h3>360° Security</h3>
+              <p>
+                Our multi-layered defense mechanisms ensure that every part of your software is protected, from code to data to user transactions.
+              </p>
+            </div>
+          </FeatureItem>
 
-        <FeatureItem>
-          <FeatureIcon>
-            {/* Web3 Icon */}
-            <span role="img" aria-label="web3">🚀</span>
-          </FeatureIcon>
-          <FeatureText>
-            <h3>Web3 Integration</h3>
-            <p>
-              Fully compatible with decentralized applications, MutaEngine provides robust security for your blockchain projects.
-            </p>
-          </FeatureText>
-        </FeatureItem>
-      </FeaturesRight>
+          <FeatureItem>
+            <FeatureIcon>
+              <FaRocket />
+            </FeatureIcon>
+            <div>
+              <h3>Web3 Integration</h3>
+              <p>
+                Fully compatible with decentralized applications, MutaEngine provides robust security for your blockchain projects.
+              </p>
+            </div>
+          </FeatureItem>
+        </FeatureList>
+      </Wrapper>
 
       {/* Call to Action Section */}
       <CTASection>
         <h2>
-          Ready to <Highlight>Secure</Highlight> Your Software?
+          Ready to <span>Secure</span> Your Software?
         </h2>
         <p>
           Get started with MutaEngine today and protect your software with the most advanced security technology available.
         </p>
-        <StartNowButton>Start Now</StartNowButton>
+        <Button href="#">Start Now</Button>
       </CTASection>
-    </FeaturesSection>
+    </Section>
   );
 };
 
