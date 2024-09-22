@@ -87,12 +87,12 @@ const ImageWrapper = styled.div`
 
   /* Updated styling for image with border and padding */
   img {
-    max-width: 90%;
+    width: 50%;
     height: auto;
     padding: 20px;
     border-radius: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white border */
-    background-color: rgba(0, 0, 0, 0.4); /* Dark background behind the image for contrast */
+    border: 1px solid #00D9FF; /* Semi-transparent white border */
+    background-color: transparent;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
 
     @media (min-width: 768px) {
