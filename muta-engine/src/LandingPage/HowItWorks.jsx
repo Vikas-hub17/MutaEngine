@@ -112,6 +112,9 @@ const HowItWorks = () => {
       <ContentWrapper>
         {/* First Section: Image on the Right */}
         <ContentBlock reverse={false}>
+        <ImageWrapper>
+            <img src={shieldImage1} alt="Polymorphic Code Engine" />
+          </ImageWrapper>
           <TextWrapper>
             <Title>
               What is the <span>Polymorphic</span> Code Engine?
@@ -121,9 +124,7 @@ const HowItWorks = () => {
             </Description>
             <Button href="#">Learn More</Button>
           </TextWrapper>
-          <ImageWrapper>
-            <img src={shieldImage1} alt="Polymorphic Code Engine" />
-          </ImageWrapper>
+        
         </ContentBlock>
 
         {/* Second Section: Image on the Left */}

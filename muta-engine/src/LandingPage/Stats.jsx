@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import codeImage from '../assests/Code.jpg'; // Replace with the correct image path
+import codeImage from '../assests/Code.png'; // Replace with the correct image path
 
 const StatsSection = styled.section`
   background-color: #00040F;
@@ -27,68 +27,97 @@ const StatsWrapper = styled.div`
 `;
 
 const StatItem = styled.div`
-  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-
+  
   span {
-    color: #00D9FF;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    display: block;
+    color: white; /* Numbers in white */
+  }
+
+  p {
+    color: #00D9FF; /* Text in blue */
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 10px;
   }
 
   @media (min-width: 768px) {
-    font-size: 1.8rem;
+    span {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
   }
 
   @media (min-width: 1024px) {
-    font-size: 2rem;
-
     span {
-      font-size: 3rem;
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.4rem;
     }
   }
 `;
 
 const Divider = styled.div`
-  width: 2px;
+  width: 1px;
   height: 60px;
-  background-color: #00D9FF;
-  opacity: 0.5;
-  margin: 0 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  
+  @media (min-width: 768px) {
+    height: 80px;
+  }
 
-  @media (max-width: 768px) {
-    display: none; /* Remove the divider for smaller screens */
+  @media (min-width: 1024px) {
+    height: 100px;
   }
 `;
 
 const ImageWrapper = styled.div`
+  margin-top: 50px;
   display: flex;
   justify-content: center;
-  margin-top: 40px;
 
+  /* Updated styling for image with border and padding */
   img {
-    width: 100%;
-    max-width: 850px;
+    max-width: 90%;
+    height: auto;
+    padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white border */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background behind the image for contrast */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+
+    @media (min-width: 768px) {
+      max-width: 70%; /* More width on larger screens */
+    }
   }
 `;
 
 const Stats = () => {
   return (
     <StatsSection>
-      <StatsWrapper>
+     <StatsWrapper>
         <StatItem>
-          <span>5000+</span> Active Users
+          <span>5000+</span>
+          <p>Active Users</p>
         </StatItem>
         <Divider />
         <StatItem>
-          <span>300+</span> Companies Trusting MutaEngine
+          <span>300+</span>
+          <p>Companies Trusting MutaEngine</p>
         </StatItem>
         <Divider />
         <StatItem>
-          <span>$500M+</span> Transaction Secured
+          <span>$500M+</span>
+          <p>Transaction Secured</p>
         </StatItem>
       </StatsWrapper>
       <ImageWrapper>
